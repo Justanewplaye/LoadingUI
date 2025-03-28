@@ -1,7 +1,3 @@
---// ULTIMATE FINAL - Logo, Comic Sans-style Label, Smaller Bar, Fade, 1.7s Delay
-
--- Requires: writefile, isfolder, getcustomasset, game:HttpGet
-
 local folder = "High.XD"
 if not isfolder(folder) then makefolder(folder) end
 
@@ -37,7 +33,7 @@ overlay.Image = getcustomasset(folder.."/bg.png")
 overlay.BackgroundTransparency = 1
 overlay.ImageTransparency = 1
 
--- LOGO: "FederalREMASTERED"
+-- the logo lmao
 local logoMain = Instance.new("TextLabel", gui)
 logoMain.Size = UDim2.new(1, 0, 0, 100)
 logoMain.Position = UDim2.new(0, 0, 0.02, 0)
@@ -59,7 +55,7 @@ logoSub.TextScaled = true
 logoSub.TextTransparency = 1
 logoSub.Rotation = -15
 
--- Loading bar + status
+-- loading bar
 local barContainer = Instance.new("Frame", gui)
 barContainer.Size = UDim2.new(0.3, 0, 0, 25)
 barContainer.Position = UDim2.new(0.35, 0, 0.85, 0)
@@ -86,13 +82,13 @@ status.Font = Enum.Font.GothamBold
 status.TextScaled = true
 status.TextTransparency = 1
 
--- Sound
+-- stolen federal sound 🤑 
 local sound = Instance.new("Sound", workspace)
 sound.SoundId = getcustomasset(folder.."/open.ogg")
 sound.Volume = 2
 sound:Play()
 
--- Fade in everything
+-- use fade in
 for i = 1, 30 do
 	local t = i / 30
 	bg.ImageTransparency = 1 - t
@@ -103,7 +99,7 @@ for i = 1, 30 do
 	task.wait(0.015)
 end
 
--- Progress stages
+-- the stages of it
 local stages = {
 	{percent = 0.10, label = "Starting Script..."},
 	{percent = 0.50, label = "Creating Folders..."},
