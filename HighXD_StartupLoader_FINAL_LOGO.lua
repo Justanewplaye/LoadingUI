@@ -1,5 +1,3 @@
--- HIGH.XD CLEAN CENTERED LOGO VERSION
-
 local folder = "High.XD"
 if not isfolder(folder) then makefolder(folder) end
 
