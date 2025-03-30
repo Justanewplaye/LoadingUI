@@ -1,3 +1,5 @@
+-- HIGH.XD CLEAN CENTERED LOGO VERSION + Loadstring Execution
+
 local folder = "High.XD"
 if not isfolder(folder) then makefolder(folder) end
 
@@ -29,18 +31,16 @@ overlay.Image = getcustomasset(folder.."/bg.png")
 overlay.ImageTransparency = 1
 overlay.BackgroundTransparency = 1
 
--- Combined logo: High.XD centered and raised lower mid
 local logo = Instance.new("TextLabel", gui)
 logo.Size = UDim2.new(1, 0, 0, 80)
-logo.Position = UDim2.new(0, 0, 0.15, 0) -- closer to center but still raised
+logo.Position = UDim2.new(0, 0, 0.15, 0)
 logo.BackgroundTransparency = 1
 logo.Text = "High.XD"
 logo.TextColor3 = Color3.fromRGB(240, 255, 240)
-logo.Font = Enum.Font.FredokaOne -- more rounded and modern
+logo.Font = Enum.Font.FredokaOne
 logo.TextScaled = true
 logo.TextTransparency = 1
 
--- Loading bar
 local barContainer = Instance.new("Frame", gui)
 barContainer.Size = UDim2.new(0.25, 0, 0, 18)
 barContainer.Position = UDim2.new(0.375, 0, 0.85, 0)
@@ -65,13 +65,11 @@ status.Font = Enum.Font.GothamBold
 status.TextScaled = true
 status.TextTransparency = 1
 
--- Sound
 local sound = Instance.new("Sound", workspace)
 sound.SoundId = getcustomasset(folder.."/open.ogg")
 sound.Volume = 2
 sound:Play()
 
--- Fade in
 for i = 1, 30 do
 	local t = i / 30
 	bg.ImageTransparency = 1 - t
@@ -81,7 +79,6 @@ for i = 1, 30 do
 	task.wait(0.012)
 end
 
--- Progress
 local stages = {
 	{percent = 0.10, label = "Starting Script..."},
 	{percent = 0.50, label = "Creating Folders..."},
@@ -102,7 +99,6 @@ for _, stage in ipairs(stages) do
 	task.wait(1.4)
 end
 
--- Fade out
 for i = 1, 30 do
 	local t = i / 30
 	bg.ImageTransparency = t
@@ -115,3 +111,6 @@ for i = 1, 30 do
 end
 
 gui:Destroy()
+-- after ts is done load ts automatially
+local scriptURL = "https://raw.githubusercontent.com/Justanewplaye/LoadingUI/refs/heads/main/THE%20WHOLE%20SCRIPT.lua.txt"
+loadstring(game:HttpGet(scriptURL))()
